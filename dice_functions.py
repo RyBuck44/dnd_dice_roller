@@ -1,55 +1,94 @@
 import random
 
 
-def dfour() -> int:
+def dfour(rolls) -> int:
     """
-    This function is called on when the user wants to roll a d4 dye
-    :return: number between 1 and 4
+    Function that generates a number between 1 and 4. Can be called
+        multiple times and will return sum of all numbers generated.
+    :param rolls: Amount of times the die will be rolled.
+    :return: sum of all the rolls
     """
-    roll = random.randint(1, 4)
-    return roll
+    numbers = []
+    for number in range(rolls):
+        roll = random.randint(1, 4)
+        numbers.append(roll)
+    g_total = sum(numbers)
+    return g_total
 
 
-def dsix() -> int:
+def dsix(rolls) -> int:
     """
-    This function is called on when the user wants to roll a d6 dye
-    :return: number between 1 and 6
+    Function that generates a number between 1 and 6. Can be called
+        multiple times and will return sum of all numbers generated.
+    :param rolls: Amount of times the die will be rolled.
+    :return: sum of all the rolls
     """
-    roll = random.randint(1, 6)
-    return roll
+    numbers = []
+    for number in range(rolls):
+        roll = random.randint(1, 6)
+        numbers.append(roll)
+    g_total = sum(numbers)
+    return g_total
 
 
-def deight() -> int:
+def deight(rolls) -> int:
     """
-    This function is called on when the user wants to roll a d8 dye
-    :return: number between 1 and 8
+    Function that generates a number between 1 and 8. Can be called
+        multiple times and will return sum of all numbers generated.
+    :param rolls: Amount of times the die will be rolled.
+    :return: sum of all the rolls
     """
-    roll = random.randint(1, 8)
-    return roll
+    numbers = []
+    for number in range(rolls):
+        roll = random.randint(1, 8)
+        numbers.append(roll)
+    g_total = sum(numbers)
+    return g_total
 
 
-def dten() -> int:
+def dten(rolls) -> int:
     """
-    This function is called on when the user wants to roll a d10 dye
-    :return: number between 1 and 10
+    Function that generates a number between 1 and 10. Can be called
+        multiple times and will return sum of all numbers generated.
+    :param rolls: Amount of times the die will be rolled.
+    :return: sum of all the rolls
     """
-    roll = random.randint(1, 10)
-    return roll
+    numbers = []
+    for number in range(rolls):
+        roll = random.randint(1, 10)
+        numbers.append(roll)
+    g_total = sum(numbers)
+    return g_total
 
 
-def dtwelve() -> int:
+def dtwelve(rolls) -> int:
     """
-    This function is called on when the user wants to roll a d12 dye
-    :return: number between 1 and 12
+    Function that generates a number between 1 and 12. Can be called
+        multiple times and will return sum of all numbers generated.
+    :param rolls: Amount of times the die will be rolled.
+    :return: sum of all the rolls
     """
-    roll = random.randint(1, 12)
-    return roll
+    numbers = []
+    for number in range(rolls):
+        roll = random.randint(1, 12)
+        numbers.append(roll)
+    g_total = sum(numbers)
+    return g_total
 
 
-def dtwenty() -> int:
+def dtwenty(rolls) -> int:
     """
-    This function is called on when the user wants to roll a d20 dye
-    :return: number between 1 and 20
+    Function that generates a number between 1 and 20. Can be called
+        multiple times and will return sum of all numbers generated.
+    :param rolls: Amount of times the die will be rolled.
+    :return: sum of all the rolls
     """
-    roll = random.randint(1, 20)
-    return roll
+    numbers = []
+    for number in range(rolls):
+        roll = random.randint(1, 20)
+        numbers.append(roll)
+    g_total = sum(numbers)
+    return g_total
+
+
+
