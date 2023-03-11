@@ -10,12 +10,18 @@ available_dice = {
 }
 
 while True:
-    t_roll = str(input("Enter the type and amount of dice in the num d die format: "))
-    x = t_roll.split('d')
-    die = x[1]
-    rolls = int(x[0])
-    if die in available_dice:
-        total = available_dice[die](rolls)
-        print(total)
-    else:
-        break
+    t_roll = str(input("Enter the types and amounts of dice in the "
+                       "(num d die,) format: "))
+    all_dice = t_roll.split(',')
+    total_number = []
+    for dice in all_dice:
+        d = dice.split('d')
+        die = d[1]
+        rolls = int(d[0])
+        if die in available_dice:
+            total = available_dice[die](rolls)
+            total_number.append(total)
+        else:
+            break
+    final_number = sum(total_number)
+    print("Your final total is: ", final_number)
