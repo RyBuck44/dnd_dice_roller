@@ -1,13 +1,13 @@
-from dice_functions import dfour, dsix, deight, dten, dtwelve, dtwenty
+from dice_functions import d_roller
 
-available_dice = {
-    "4": dfour,
-    "6": dsix,
-    "8": deight,
-    "10": dten,
-    "12": dtwelve,
-    "20": dtwenty,
-}
+available_dice = [
+    4,
+    6,
+    8,
+    10,
+    12,
+    20,
+]
 
 while True:
     t_roll = str(input("Enter the types and amounts of dice in the "
@@ -16,10 +16,10 @@ while True:
     total_number = []
     for dice in all_dice:
         d = dice.split('d')
-        die = d[1]
+        die = int(d[1])
         rolls = int(d[0])
         if die in available_dice:
-            total = available_dice[die](rolls)
+            total = d_roller(die, rolls)
             total_number.append(total)
         else:
             break
