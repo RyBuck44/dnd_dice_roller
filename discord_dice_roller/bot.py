@@ -1,9 +1,10 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
+import os
 import Droller
 
-token = 'MTEwMDQ4OTcwODc0NTgwNTg5Ng.GjLbIq.zMQ4uTzzFiaQIuzvjDa3FjzICfAwVENE7ICZik'
+secret_code = os.getenv('DB_TOKEN')
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 
@@ -26,4 +27,4 @@ tree = app_commands.CommandTree(bot)
 async def self(interaction: discord.Interaction):
     await interaction.response.send_message('dice')
 
-bot.run(token)
+bot.run(secret_code)
