@@ -23,8 +23,18 @@ bot = db()
 tree = app_commands.CommandTree(bot)
 
 
-@tree.command(name='dice_box', description='tells user what types of dice they can roll', guild=discord.Object(id=1100490695309017168))
+@tree.command(name='start', description='prompts the beginning of the rolling process', guild=discord.Object(id=1100490695309017168))
 async def self(interaction: discord.Interaction):
-    await interaction.response.send_message('dice')
+    await interaction.response.send_message('Please enter all the dice you want me to roll. \n'
+                                            'Currently I have D20s, D12s, D10s, D8s, D6s, D4s. \n'
+                                            'I can also flip a coin using ** /flip **. \n'
+                                            'To start rolling, see the format below and use ** /roll **\n'
+                                            'Please use this format: numddie. \n'
+                                            'EX: 2d4,4d12,7d8')
+
+
+
+
+
 
 bot.run(secret_code)
