@@ -2,7 +2,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 import os
-import Droller
+from Droller import flip
 
 secret_code = os.getenv('DB_TOKEN')
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
@@ -31,6 +31,13 @@ async def self(interaction: discord.Interaction):
                                             'To start rolling, see the format below and use ** /roll **\n'
                                             'Please use this format: numddie. \n'
                                             'EX: 2d4,4d12,7d8')
+
+
+@tree.command(name='flip', description='flips a coin', guild=discord.Object(id=1100490695309017168))
+async def self(interaction: discord.Interaction):
+    outcome = flip()
+    await interaction.response.send_message(f"Ahh the old two sided die! \n"
+                                            f"Here's what I got: {outcome}")
 
 
 
