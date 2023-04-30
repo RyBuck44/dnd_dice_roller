@@ -71,9 +71,8 @@ async def self(interaction: discord.Interaction, dice:str):
                                             f"Here's the total: {final_number}")
 
 
+def run_Dice_bot():
+    bot.run(secret_code)
 
 
-
-
-bot.run(secret_code)
-
+run_Dice_bot()
