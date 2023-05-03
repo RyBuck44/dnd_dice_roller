@@ -14,7 +14,7 @@ class db(discord.Client):
         self.synced = False
 
     async def on_ready(self):
-        await tree.sync(guild=discord.Object(id=1100490695309017168))
+        await tree.sync()
         self.synced = True
         print('Bot is Online')
 
@@ -23,7 +23,7 @@ bot = db()
 tree = app_commands.CommandTree(bot)
 
 
-@tree.command(name='help', description='prompts the beginning of the rolling process', guild=discord.Object(id=1100490695309017168))
+@tree.command(name='help', description='prompts the beginning of the rolling process')
 async def self(interaction: discord.Interaction):
     await interaction.response.send_message('Please enter all the dice you want me to roll. \n'
                                             'Currently I have D20s, D12s, D10s, D8s, D6s, D4s. \n'
@@ -33,14 +33,14 @@ async def self(interaction: discord.Interaction):
                                             'EX: 2d4,4d12,7d8')
 
 
-@tree.command(name='flip', description='flips a coin', guild=discord.Object(id=1100490695309017168))
+@tree.command(name='flip', description='flips a coin')
 async def self(interaction: discord.Interaction):
     outcome = coin_flip()
     await interaction.response.send_message(f"Ahh the old two sided die! \n"
                                             f"Here's what I got: {outcome}")
 
 
-@tree.command(name='roll', description='rolls selected dice', guild=discord.Object(id=1100490695309017168))
+@tree.command(name='roll', description='rolls selected dice')
 async def self(interaction: discord.Interaction, dice:str):
     available_dice = [
         4,
